@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>טבלת משימות UTECH</title>
     <link rel="icon" href="logo.jpg" type="image/jpeg" />
+    <style>
+      /* Task Fullscreen Modal Animation */
+      #task-fullscreen-overlay {
+        animation: overlayFadeIn 0.4s cubic-bezier(.4,0,.2,1);
+      }
+      @keyframes overlayFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      #task-fullscreen-content {
+        opacity: 0;
+        transform: translateY(-40px) scale(0.96);
+        animation: contentFadeIn 0.4s cubic-bezier(.4,0,.2,1) forwards;
+      }
+      @keyframes contentFadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-40px) scale(0.96);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+    </style>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
       import {
